@@ -37,6 +37,10 @@ class meArm():
 			time.sleep(0.5)
 		print("Fin init")
 
+		self.x = 0
+		self.y = 0
+		self.z = 0
+
 		self.servoInfo = {}
 		self.servoInfo["base"] = self.setupServo(sweepMinBase, sweepMaxBase, angleMinBase, angleMaxBase)
 		self.servoInfo["shoulder"] = self.setupServo(sweepMinShoulder, sweepMaxShoulder, angleMinShoulder, angleMaxShoulder)
@@ -105,13 +109,15 @@ class meArm():
 	def openGripper(self):
 		"""Open the gripper, dropping whatever is being carried"""
 		pwm_out_gripper = self.angle2pwm("gripper", pi/4.0)
-		self.servoPWM["elbow"].ChangeDutyCycle(pwm_out_gripper)
+		print(pwm_out_gripper)
+		self.servoPWM["gripper"].ChangeDutyCycle(pwm_out_gripper)
 		time.sleep(0.3)
 		
 	def closeGripper(self):
 		"""Close the gripper, grabbing onto anything that might be there"""
 		pwm_out_gripper = self.angle2pwm("gripper", -pi/4.0)
-		self.servoPWM["elbow"].ChangeDutyCycle(pwm_out_gripper)
+		print(pwm_out_gripper)
+		self.servoPWM["gripper"].ChangeDutyCycle(pwm_out_gripper)
 		time.sleep(0.3)
 
 	def isReachable(self, x, y, z):
