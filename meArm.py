@@ -67,8 +67,11 @@ class meArm():
 		"""Work out pulse length to use to achieve a given requested angle taking into account stored calibration data"""
 		#ret = 150 + int(0.5 + (self.servoInfo[servo]["zero"] + self.servoInfo[servo]["gain"] * angle) * 450 / 180)
 		# #return ret
-		degree = (angle / pi) * 180.0
+		degree = self.rad2deg(angle)
 		return 7.5 + (degree / 90.0) * 5
+
+	def rad2deg(self, angle):
+		return (angle / pi) * 180.0
 
 	def goDirectlyTo(self, tarx, tary, tarz):
 		angles = [0,0,0]
@@ -79,7 +82,9 @@ class meArm():
 			radBase = angles[0]
 			radShoulder = angles[1]
 			radElbow = angles[2]
-
+			
+			print("base=> {},{},{}".format(self.rad2deg(radBase), self.rad2deg(radShoulder), self.rad2deg(radElbow)))
+			print("pwms=> {},{},{}".format(pwm_out_base, pwm_out_elbow, pwm_out_shoulder))
 			pwm_out_base = self.angle2pwm("base", radBase)
 			self.servoPWM["base"].ChangeDutyCycle(pwm_out_base)
 			
@@ -92,7 +97,7 @@ class meArm():
 			self.x = tarx
 			self.y = tary
 			self.z = tarz
-			print("goto=> {},{},{}".format(tarx, tary, tarz))
+			
 			
 	def gotoPoint(self, x, y, z):
 		"""Travel in a straight line from current position to a requested position"""
