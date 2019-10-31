@@ -58,6 +58,7 @@ class meArm():
 		zero = n_min - gain * a_min
 		rec["gain"] = gain
 		rec["zero"] = zero
+		print("Zero: {}".format(rec["zero"]))
 		rec["min"] = n_min
 		rec["max"] = n_max
 		return rec
