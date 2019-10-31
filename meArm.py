@@ -70,7 +70,7 @@ class meArm():
 		# #return ret
 		degree = self.rad2deg(angle) 
 		if degree > 90:
-			degree = 90 - (degree % 180)
+			degree = - (degree % 90)
 		return 7.5 + (degree / 90.0) * 5
 
 	def rad2deg(self, angle):
