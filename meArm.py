@@ -73,7 +73,7 @@ class meArm():
 			degree %= 90
 		if degree < 0:
 			degree = -((-degree) % 90)
-		return 7.5 + ((degree + self.servoInfo["base"]["zero"]) / 90.0) * 5
+		return 7.5 + (degree / 90.0) * 5
 
 	def rad2deg(self, angle):
 		return (angle / pi) * 180.0
