@@ -68,7 +68,7 @@ class meArm():
 		"""Work out pulse length to use to achieve a given requested angle taking into account stored calibration data"""
 		#ret = 150 + int(0.5 + (self.servoInfo[servo]["zero"] + self.servoInfo[servo]["gain"] * angle) * 450 / 180)
 		# #return ret
-		degree = self.rad2deg(angle)
+		degree = self.rad2deg(angle) - 180
 		if degree > 0:
 			degree %= 90
 		if degree < 0:
