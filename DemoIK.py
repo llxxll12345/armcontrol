@@ -8,7 +8,6 @@ import meArm
 
 def main():
     arm = meArm.meArm()
-    arm.begin()
 	
     while True:
         arm.openGripper()
