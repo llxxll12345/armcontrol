@@ -31,6 +31,12 @@ class meArm():
 		self.servoPWM["elbow"] = p3
 		self.servoPWM["gripper"] = p4
 
+		print("Init Servo")
+		for p in self.servoPWM.values():
+			p.start(7.5)
+			time.sleep(0.5)
+		print("Fin init")
+
 		self.servoInfo = {}
 		self.servoInfo["base"] = self.setupServo(sweepMinBase, sweepMaxBase, angleMinBase, angleMaxBase)
 		self.servoInfo["shoulder"] = self.setupServo(sweepMinShoulder, sweepMaxShoulder, angleMinShoulder, angleMaxShoulder)
