@@ -47,11 +47,11 @@ def main():
         time.sleep(0.5)
         arm.gotoPoint(1, -1, 1)
         time.sleep(0.5)
-        arm.gotoPoint(-50, 50, 100)
+        arm.gotoPoint(50, -50, 100)
         time.sleep(0.5)
-        arm.gotoPoint(-20, 30, 50)
+        arm.gotoPoint(20, -30, 50)
         time.sleep(0.5)
-        arm.gotoPoint(-10, 10, 20)
+        arm.gotoPoint(10, -10, 20)
         time.sleep(0.5)
 
 
