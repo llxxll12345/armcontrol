@@ -72,6 +72,8 @@ class meArm():
 
 	def goDirectlyTo(self, x, y, z):
 		angles = [0,0,0]
+		print("target: {},{},{}".format(x, y, z))
+		print(kinematics.cart2polar(y, x))
 		if kinematics.solve(x, y, z, angles):
 			radBase = angles[0]
 			radShoulder = angles[1]
@@ -89,7 +91,7 @@ class meArm():
 			self.x = x
 			self.y = y
 			self.z = z
-			print("goto {},{},{}".format(x, y, z))
+			print("goto=> {},{},{}".format(x, y, z))
 			
 	def gotoPoint(self, x, y, z):
 		"""Travel in a straight line from current position to a requested position"""
@@ -115,7 +117,7 @@ class meArm():
 		
 	def closeGripper(self):
 		"""Close the gripper, grabbing onto anything that might be there"""
-		pwm_out_gripper = self.angle2pwm("gripper", -pi/4.0)
+		pwm_out_gripper = self.angle2pwm("gripper", pi/2.0)
 		print(pwm_out_gripper)
 		self.servoPWM["gripper"].ChangeDutyCycle(pwm_out_gripper)
 		time.sleep(0.3)
