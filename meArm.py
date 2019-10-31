@@ -58,7 +58,7 @@ class meArm():
 		zero = n_min - gain * a_min
 		rec["gain"] = gain
 		rec["zero"] = zero
-		print("Zero: {}".format(rec["zero"]))
+		#print("Zero: {}".format(rec["zero"]))
 		rec["min"] = n_min
 		rec["max"] = n_max
 		return rec
@@ -69,7 +69,7 @@ class meArm():
 		#ret = 150 + int(0.5 + (self.servoInfo[servo]["zero"] + self.servoInfo[servo]["gain"] * angle) * 450 / 180)
 		# #return ret
 		degree = self.rad2deg(angle)
-		return 7.5 + (degree / 90.0) * 5
+		return 7.5 + ((degree + self.servoInfo["base"]) / 90.0) * 5
 
 	def rad2deg(self, angle):
 		return (angle / pi) * 180.0
