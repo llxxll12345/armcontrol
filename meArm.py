@@ -69,8 +69,7 @@ class meArm():
 		#ret = 150 + int(0.5 + (self.servoInfo[servo]["zero"] + self.servoInfo[servo]["gain"] * angle) * 450 / 180)
 		# #return ret
 		degree = self.rad2deg(angle) 
-		degree = (degree + 180) % 180
-		return 2.5 + (degree / 90.0) * 5
+		return 2.5 + (degree / 180.0) * 5
 
 	def rad2deg(self, angle):
 		return (angle / pi) * 180.0
@@ -126,7 +125,7 @@ class meArm():
 		
 	def closeGripper(self):
 		"""Close the gripper, grabbing onto anything that might be there"""
-		pwm_out_gripper = self.angle2pwm("gripper", pi/2.0)
+		pwm_out_gripper = self.angle2pwm("gripper", 3 * pi/4.0)
 		print(pwm_out_gripper)
 		self.servoPWM["gripper"].ChangeDutyCycle(pwm_out_gripper)
 		time.sleep(0.3)
