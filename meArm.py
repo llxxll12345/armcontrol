@@ -78,7 +78,7 @@ class meArm():
 		angles = [0,0,0]
 		#print("From {},{},{}".format(self.x, self.y, self.z))
 		#print("goto=> {},{},{}".format(tarx, tary, tarz))
-		print(kinematics.cart2polar(tary, tarx))
+		#print(kinematics.cart2polar(tary, tarx))
 		if kinematics.solve(tarx, tary, tarz, angles):
 			radBase = angles[0]
 			radShoulder = angles[1]
