@@ -76,8 +76,8 @@ class meArm():
 
 	def goDirectlyTo(self, tarx, tary, tarz):
 		angles = [0,0,0]
-		print("From {},{},{}".format(self.x, self.y, self.z))
-		print("goto=> {},{},{}".format(tarx, tary, tarz))
+		#print("From {},{},{}".format(self.x, self.y, self.z))
+		#print("goto=> {},{},{}".format(tarx, tary, tarz))
 		print(kinematics.cart2polar(tary, tarx))
 		if kinematics.solve(tarx, tary, tarz, angles):
 			radBase = angles[0]
@@ -93,8 +93,8 @@ class meArm():
 			pwm_out_elbow = self.angle2pwm("elbow", radElbow)
 			self.servoPWM["elbow"].ChangeDutyCycle(pwm_out_elbow)
 
-			print("base=> {},{},{}".format(self.rad2deg(radBase), self.rad2deg(radShoulder), self.rad2deg(radElbow)))
-			print("pwms=> {},{},{}".format(pwm_out_base, pwm_out_elbow, pwm_out_shoulder))
+			#print("base=> {},{},{}".format(self.rad2deg(radBase), self.rad2deg(radShoulder), self.rad2deg(radElbow)))
+			#print("pwms=> {},{},{}".format(pwm_out_base, pwm_out_elbow, pwm_out_shoulder))
 
 			self.x = tarx
 			self.y = tary
@@ -102,6 +102,7 @@ class meArm():
 			
 			
 	def gotoPoint(self, x, y, z):
+		print("goto=> {},{},{}".format(x, y, z))
 		"""Travel in a straight line from current position to a requested position"""
 		x0 = self.x
 		y0 = self.y
