@@ -33,6 +33,10 @@ def main():
         time.sleep(0.5)
         arm.gotoPoint(10, 10, 20)
         time.sleep(0.5)
+
+        time.sleep(3)
+        print("Neg")
+
         arm.gotoPoint(0, -10, 20)
         time.sleep(0.5)
         arm.gotoPoint(0, -20, 50)
