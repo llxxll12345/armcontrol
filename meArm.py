@@ -118,14 +118,14 @@ class meArm():
 		
 	def openGripper(self):
 		"""Open the gripper, dropping whatever is being carried"""
-		pwm_out_gripper = self.angle2pwm("gripper", pi/4.0)
+		pwm_out_gripper = self.angle2pwm("gripper", pi/2.0)
 		print(pwm_out_gripper)
 		self.servoPWM["gripper"].ChangeDutyCycle(pwm_out_gripper)
 		time.sleep(0.3)
 		
 	def closeGripper(self):
 		"""Close the gripper, grabbing onto anything that might be there"""
-		pwm_out_gripper = self.angle2pwm("gripper", 3 * pi/4.0)
+		pwm_out_gripper = self.angle2pwm("gripper", 3 * pi/2.0)
 		print(pwm_out_gripper)
 		self.servoPWM["gripper"].ChangeDutyCycle(pwm_out_gripper)
 		time.sleep(0.3)
