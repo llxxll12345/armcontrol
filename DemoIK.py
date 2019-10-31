@@ -16,14 +16,14 @@ def main():
         arm.closeGripper()
         arm.openGripper()
 
-        arm.gotoPoint(0, 150, 50)
-        arm.gotoPoint(0, 150, 0)
-        arm.gotoPoint(0, 150, 150)
-        arm.gotoPoint(0, 150, 50)
-        arm.gotoPoint(-150, 150, 50)
-        arm.gotoPoint(150, 150, 50)
-        arm.gotoPoint(0, 150, 50)
-        arm.gotoPoint(0, 100, 50)
+        arm.gotoPoint(0, 10, 20)
+        arm.gotoPoint(0, 20, 50)
+        arm.gotoPoint(0, 50, 100)
+        arm.gotoPoint(0, 20, 10)
+        arm.gotoPoint(1, 1, 1)
+        arm.gotoPoint(50, 50, 50)
+        arm.gotoPoint(30, 20, 10)
+        arm.gotoPoint(10, 10, 100)
 
 if __name__ == '__main__':
     main()
