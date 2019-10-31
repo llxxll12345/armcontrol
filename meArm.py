@@ -37,9 +37,9 @@ class meArm():
 			time.sleep(0.5)
 		print("Fin init")
 
-		self.x = 0
-		self.y = 0
-		self.z = 0
+		self.x = 1
+		self.y = 1
+		self.z = 1
 
 		self.servoInfo = {}
 		self.servoInfo["base"] = self.setupServo(sweepMinBase, sweepMaxBase, angleMinBase, angleMaxBase)
