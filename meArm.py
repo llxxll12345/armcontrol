@@ -69,7 +69,11 @@ class meArm():
 		#ret = 150 + int(0.5 + (self.servoInfo[servo]["zero"] + self.servoInfo[servo]["gain"] * angle) * 450 / 180)
 		# #return ret
 		degree = self.rad2deg(angle) 
-		return 2.5 + (degree / 180.0) * 5
+		if degree > 0:
+			degree = min(90, degree)
+		elif degree < 0:
+			degree = max(-90, degree)
+		return 7.5 + (degree / 90.0) * 5
 
 	def rad2deg(self, angle):
 		return (angle / pi) * 180.0
@@ -95,7 +99,7 @@ class meArm():
 			pwm_out_elbow = self.angle2pwm("elbow", radElbow)
 			self.servoPWM["elbow"].ChangeDutyCycle(pwm_out_elbow)
 
-			print("base=> {},{},{}".format(self.rad2deg(radBase), self.rad2deg(radShoulder), self.rad2deg(radElbow)))
+			print("base=> {},{},{}".format(self.rad2deg(radBase), self.rad2deg(radElbow), self.rad2deg(radShoulder))
 			print("pwms=> {},{},{}".format(pwm_out_base, pwm_out_elbow, pwm_out_shoulder))
 
 			self.x = tarx
