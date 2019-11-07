@@ -69,10 +69,12 @@ class meArm():
 		#ret = 150 + int(0.5 + (self.servoInfo[servo]["zero"] + self.servoInfo[servo]["gain"] * angle) * 450 / 180)
 		# #return ret
 		degree = self.rad2deg(angle) 
-		if degree > 0:
+		if degree > 180:
+			degree = (360 - degree) % 90
+		elif degree >= 0 and degree <= 180:
 			degree = degree % 90
-		elif degree < 0:
-			degree = -((degree + 90) % 90)
+		elif degree >= -180 and degree < 0:
+			degree = -(abs(degree) % 90)
 		return 7.5 + (degree / 90.0) * 5
 
 	def rad2deg(self, angle):
