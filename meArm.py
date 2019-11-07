@@ -88,7 +88,7 @@ class meArm():
 			radShoulder = angles[1]
 			radElbow = angles[2]
 
-			#print("angle => {},{},{}".format(radBase, radElbow, radShoulder))
+			print("angle => {},{},{}".format(radBase, radElbow, radShoulder))
 
 			pwm_out_base = self.angle2pwm("base", radBase)
 			self.servoPWM["base"].ChangeDutyCycle(pwm_out_base)
