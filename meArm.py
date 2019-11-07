@@ -84,6 +84,8 @@ class meArm():
 			radShoulder = angles[1]
 			radElbow = angles[2]
 
+			#print("angle => {},{},{}".format(radBase, radElbow, radShoulder))
+
 			pwm_out_base = self.angle2pwm("base", radBase)
 			self.servoPWM["base"].ChangeDutyCycle(pwm_out_base)
 			
@@ -93,8 +95,8 @@ class meArm():
 			pwm_out_elbow = self.angle2pwm("elbow", radElbow)
 			self.servoPWM["elbow"].ChangeDutyCycle(pwm_out_elbow)
 
-			#print("base=> {},{},{}".format(self.rad2deg(radBase), self.rad2deg(radShoulder), self.rad2deg(radElbow)))
-			#print("pwms=> {},{},{}".format(pwm_out_base, pwm_out_elbow, pwm_out_shoulder))
+			print("base=> {},{},{}".format(self.rad2deg(radBase), self.rad2deg(radShoulder), self.rad2deg(radElbow)))
+			print("pwms=> {},{},{}".format(pwm_out_base, pwm_out_elbow, pwm_out_shoulder))
 
 			self.x = tarx
 			self.y = tary
