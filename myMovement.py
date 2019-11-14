@@ -51,6 +51,7 @@ class meArm():
 		cycleLen = 7.5 + (degree / 90.0) * 5
 		if cycleLen > 12.5 or cycleLen < 2.5:
 			return False
+		step = 0
 		if lastDegree < degree:
 			step = -5
 		if lastDegree > degree:
@@ -62,6 +63,8 @@ class meArm():
 		return True
 			
 	def gotoPoint(self, x, y, z):
+		if y == 0:
+			y = 1
 		tempBaseAngle = self.rad2deg(atan(x/y))
 		distance = sqrt(pow(x, 2) + pow(y, 2))
 
