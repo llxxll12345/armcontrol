@@ -73,24 +73,24 @@ class meArm():
 		tempElbowAngle = self.rad2deg(elbowGrad)
 
 		print("Angles: {}, {}, {}".format(tempBaseAngle, tempElbowAngle, tempShoulderAngle))
-		if rotateDegreeBasic("base", tempBaseAngle, self.baseAngle):
+		if self.rotateDegree("base", tempBaseAngle, self.baseAngle):
 			self.baseAngle = tempBaseAngle
 		
-		if rotateDegreeBasic("shoulder", tempShoulderAngle, self.shoulderAngle):
+		if self.rotateDegree("shoulder", tempShoulderAngle, self.shoulderAngle):
 			self.shoulderAngle = tempShoulderAngle
 
-		if rotateDegreeBasic("elbow", tempElbowAngle, self.elbowAngle):
+		if self.rotateDegree("elbow", tempElbowAngle, self.elbowAngle):
 			self.elbowAngle = tempElbowAngle
 
 		
 	def openGripper(self):
 		"""Open the gripper, dropping whatever is being carried"""
-		rotateDegreeBasic("gripper", 20)
+		self.rotateDegreeBasic("gripper", 20)
 		time.sleep(0.3)
 		
 	def closeGripper(self):
 		"""Close the gripper, grabbing onto anything that might be there"""
-		rotateDegreeBasic("gripper", 70)
+		self.rotateDegreeBasic("gripper", 70)
 		time.sleep(0.3)
 
 	def getPos(self):
