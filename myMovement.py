@@ -73,18 +73,17 @@ class meArm():
 		tempShoulderAngle = self.rad2deg(shoulderGrad)
 		baseHeight = 80 * cos(shoulderGrad) + 68
 
-
 		elbowGrad = asin((z - baseHeight) / 80)
 		tempElbowAngle = self.rad2deg(elbowGrad)
 
 		print("Angles: {}, {}, {}".format(tempBaseAngle, tempElbowAngle, tempShoulderAngle))
-		if self.rotateDegree("base", tempBaseAngle, self.baseAngle):
+		if self.rotateDegreeBasic("base", tempBaseAngle):
 			self.baseAngle = tempBaseAngle
 		
-		if self.rotateDegree("shoulder", tempShoulderAngle, self.shoulderAngle):
+		if self.rotateDegreeBasic("shoulder", tempShoulderAngle):
 			self.shoulderAngle = tempShoulderAngle
 
-		if self.rotateDegree("elbow", tempElbowAngle, self.elbowAngle):
+		if self.rotateDegreeBasic("elbow", tempElbowAngle):
 			self.elbowAngle = tempElbowAngle
 
 		
