@@ -51,10 +51,11 @@ class meArm():
 		cycleLen = 7.5 + (degree / 90.0) * 5
 		if cycleLen > 12.5 or cycleLen < 2.5:
 			return False
-		step = 0
-		if lastDegree < degree:
+		if int(lastDegree) ==  int(degree):
+			return True
+		if int(lastDegree) < int(degree):
 			step = -5
-		if lastDegree > degree:
+		if int(lastDegree) > int(degree):
 			step = 5
 		for deg in range(int(degree), int(lastDegree), step):
 			cycleLen = 7.5 + (deg / 90.0) * 5
@@ -71,6 +72,7 @@ class meArm():
 		shoulderGrad = asin((distance - 80)/ 80)
 		tempShoulderAngle = self.rad2deg(shoulderGrad)
 		baseHeight = 80 * cos(shoulderGrad) + 68
+
 
 		elbowGrad = asin((z - baseHeight) / 80)
 		tempElbowAngle = self.rad2deg(elbowGrad)
