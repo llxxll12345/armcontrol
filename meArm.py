@@ -85,7 +85,7 @@ class meArm():
 		#global lastDegree
 		#print(degree, lastDegree)
 		#print("rotate {}".format(degree))    
-		i#f lastDegree < degree:
+		#f lastDegree < degree:
 		#	step = 5
 		#else:
 		#	step = -5
