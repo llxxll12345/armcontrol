@@ -80,6 +80,21 @@ class meArm():
 	def rad2deg(self, angle):
 		return (angle / pi) * 180.0
 
+
+	def rotateDegreeBasic(self, pName, degree):
+		#global lastDegree
+		#print(degree, lastDegree)
+		#print("rotate {}".format(degree))    
+		i#f lastDegree < degree:
+		#	step = 5
+		#else:
+		#	step = -5
+		#for i in range(lastDegree, degree, step):
+		#	cycle = 7.5 + (i / 90.0) * 5
+		self.servoPWM[pName].ChangeDutyCycle(7.5 + (degree / 90.0) * 5)
+		#	time.sleep(0.05)
+		time.sleep(0.2)
+
 	def goDirectlyTo(self, tarx, tary, tarz):
 		angles = [0,0,0]
 		#print("From {},{},{}".format(self.x, self.y, self.z))
