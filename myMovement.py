@@ -55,7 +55,7 @@ class meArm():
 			step = -5
 		if lastDegree > degree:
 			step = 5
-		for deg in range(degree, lastDegree, step):
+		for deg in range(int(degree), int(lastDegree), step):
 			cycleLen = 7.5 + (deg / 90.0) * 5
 			self.servoPWM[pName].ChangeDutyCycle(cycleLen)
 		time.sleep(0.2)	
