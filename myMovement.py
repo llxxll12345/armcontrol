@@ -69,7 +69,9 @@ class meArm():
 		tempBaseAngle = self.rad2deg(atan(x/y))
 		distance = sqrt(pow(x, 2) + pow(y, 2))
 
+		print((distance - 80) / 80)
 		shoulderGrad = asin((distance - 80)/ 80)
+		
 		tempShoulderAngle = self.rad2deg(shoulderGrad)
 		baseHeight = 80 * cos(shoulderGrad) + 68
 
