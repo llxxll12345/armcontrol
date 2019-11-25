@@ -103,12 +103,13 @@ class meArm():
 
 	def goBack(self):
 		angle = self.baseAngle
-		rad = sqrt(5800)
+		rad = 76
+		print(angle)
 		self.gotoPoint(rad * sin(angle), rad * cos(angle), 70)
 
 	def moveForward(self):
 		angle = self.baseAngle
-		rad = sqrt(32000)
+		rad = 178
 		self.gotoPoint(rad * sin(angle), rad * cos(angle), 70)
 
 	def goPick(self):
