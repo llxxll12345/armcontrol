@@ -69,13 +69,14 @@ class meArm():
 		tempBaseAngle = self.rad2deg(atan(x/y))
 		distance = sqrt(pow(x, 2) + pow(y, 2))
 
-		print((distance - 80) / 80)
-		shoulderGrad = asin((distance - 80)/ 80)
+		print((distance - 70) / 70)
+		shoulderGrad = asin((distance - 70)/ 70)
 		
 		tempShoulderAngle = self.rad2deg(shoulderGrad)
-		baseHeight = 80 * cos(shoulderGrad) + 68
+		baseHeight = 70 * cos(shoulderGrad) + 60
 
-		elbowGrad = asin((z - baseHeight) / 80)
+		elbowGrad = asin((z - baseHeight) / 70)
+		print((z - baseHeight) / 70)
 		tempElbowAngle = self.rad2deg(elbowGrad)
 
 		print("Angles: {}, {}, {}".format(tempBaseAngle, tempElbowAngle, tempShoulderAngle))
