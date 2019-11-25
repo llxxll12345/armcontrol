@@ -118,6 +118,13 @@ class meArm():
 		self.closeGripper()
 		self.goBack()
 
+	def goRelease(self):
+		self.moveForward()
+		self.openGripper()
+		time.sleep(2)
+		self.goBack()
+		self.closeGripper()
+
 	def turnBase(self, angle):
 		self.rotateDegreeBasic("base", angle)
 
