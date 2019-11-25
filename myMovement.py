@@ -101,6 +101,18 @@ class meArm():
 		self.shoulderAngle = 0
 		self.elbowAngle = 0
 
+	def goBack(self):
+		self.gotoPoint(70, -30, 70)
+
+	def moveForward(self):
+		self.gotoPoint(160, -80, 50)
+
+	def goPick(self):
+		self.openGripper()
+		self.moveForward()
+		self.closeGripper()
+		self.goBack()
+
 		
 	def openGripper(self):
 		"""Open the gripper, dropping whatever is being carried"""
