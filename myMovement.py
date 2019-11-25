@@ -90,6 +90,17 @@ class meArm():
 		if self.rotateDegreeBasic("elbow", tempElbowAngle):
 			self.elbowAngle = tempElbowAngle
 
+	def resetAll(self):
+		print("Resetting Servo")
+		for p in self.servoPWM.values():
+			p.start(7.5)
+			time.sleep(0.5)
+		print("Fin reset")
+
+		self.baseAngle = 0
+		self.shoulderAngle = 0
+		self.elbowAngle = 0
+
 		
 	def openGripper(self):
 		"""Open the gripper, dropping whatever is being carried"""
@@ -98,7 +109,7 @@ class meArm():
 		
 	def closeGripper(self):
 		"""Close the gripper, grabbing onto anything that might be there"""
-		self.rotateDegreeBasic("gripper", 70)
+		self.rotateDegreeBasic("gripper", 80)
 		time.sleep(0.3)
 
 	def getPos(self):
