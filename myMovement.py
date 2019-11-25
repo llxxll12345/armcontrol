@@ -114,6 +114,9 @@ class meArm():
 		self.closeGripper()
 		self.goBack()
 
+	def turnBase(self, angle):
+		self.rotateDegreeBasic("base", angle)
+
 		
 	def openGripper(self):
 		"""Open the gripper, dropping whatever is being carried"""
