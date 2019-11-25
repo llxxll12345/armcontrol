@@ -104,13 +104,15 @@ class meArm():
 	def goBack(self):
 		angle = self.baseAngle
 		rad = 76
-		print(angle)
+		print("angle", angle)
 		self.gotoPoint(rad * cos(angle), rad * sin(angle), 70)
+		self.baseAngle = angle
 
 	def moveForward(self):
 		angle = self.baseAngle
 		rad = 178
 		self.gotoPoint(rad * cos(angle), rad * sin(angle), 70)
+		self.baseAngle = angle
 
 	def goPick(self):
 		self.openGripper()
