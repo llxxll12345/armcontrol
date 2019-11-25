@@ -66,10 +66,11 @@ class meArm():
 	def gotoPoint(self, x, y, z):
 		if y == 0:
 			y = 1
-		tempBaseAngle = self.rad2deg(atan(x/y))
+		tempBaseAngle = self.rad2deg(atan(y/x))
 		distance = sqrt(pow(x, 2) + pow(y, 2))
 
-		print((distance - 90) / 90)
+		
+		print(distance, (distance - 90) / 90)
 		shoulderGrad = asin((distance - 90)/ 90)
 		
 		tempShoulderAngle = self.rad2deg(shoulderGrad)
