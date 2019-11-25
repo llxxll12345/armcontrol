@@ -122,7 +122,7 @@ class meArm():
 		
 	def closeGripper(self):
 		"""Close the gripper, grabbing onto anything that might be there"""
-		self.rotateDegreeBasic("gripper", 80)
+		self.rotateDegreeBasic("gripper", 90)
 		time.sleep(0.3)
 
 	def getPos(self):
