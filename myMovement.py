@@ -40,6 +40,9 @@ class meArm():
 	def rad2deg(self, angle):
 		return (angle / pi) * 180.0
 
+	def deg2rad(self, angle):
+		return pi * angle / 180.0
+
 	def rotateDegreeBasic(self, pName, degree):
 		cycleLen = 7.5 + (degree / 90.0) * 5
 		if cycleLen > 12.5 or cycleLen < 2.5:
@@ -104,15 +107,14 @@ class meArm():
 	def goBack(self):
 		angle = self.baseAngle
 		rad = 76
-		print("angle", angle)
-		self.gotoPoint(rad * cos(angle), rad * sin(angle), 70)
-		self.baseAngle = angle
+		self.gotoPoint(rad * cos(self.deg2rad(angle)), rad * sin(self.deg2rad(angle)), 70)
+		
 
 	def moveForward(self):
 		angle = self.baseAngle
 		rad = 178
-		self.gotoPoint(rad * cos(angle), rad * sin(angle), 70)
-		self.baseAngle = angle
+		self.gotoPoint(rad * cos(self.deg2rad(angle)), rad * sin(self.deg2rad(angle)), 70)
+		
 
 	def goPick(self):
 		self.openGripper()
