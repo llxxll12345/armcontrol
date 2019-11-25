@@ -110,7 +110,7 @@ class meArm():
 	def goPick(self):
 		self.openGripper()
 		self.moveForward()
-		time.sleep(0.5)
+		time.sleep(2)
 		self.closeGripper()
 		self.goBack()
 
