@@ -102,10 +102,14 @@ class meArm():
 		self.elbowAngle = 0
 
 	def goBack(self):
-		self.gotoPoint(70, -30, 70)
+		angle = self.baseAngle
+		rad = sqrt(5800)
+		self.gotoPoint(rad * cos(angle), rad * sin(angle), 70)
 
 	def moveForward(self):
-		self.gotoPoint(160, -80, 50)
+		angle = self.baseAngle
+		rad = sqrt(5800)
+		self.gotoPoint(rad * cos(angle), rad * sin(angle), 50)
 
 	def goPick(self):
 		self.openGripper()
