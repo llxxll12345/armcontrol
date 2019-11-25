@@ -127,6 +127,7 @@ class meArm():
 
 	def turnBase(self, angle):
 		self.rotateDegreeBasic("base", angle)
+		self.baseAngle = angle
 
 		
 	def openGripper(self):
