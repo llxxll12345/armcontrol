@@ -45,14 +45,16 @@ class meArm():
 
 	def rotateDegreeBasic(self, pName, degree):
 		cycleLen = 7.5 + (degree / 90.0) * 5
-		if cycleLen > 12.5 or cycleLen < 2.5:
+		#if cycleLen > 12.5 or
+		if cycleLen < 2.5:
 			return False
 		self.servoPWM[pName].ChangeDutyCycle(cycleLen)
 		return True
 
 	def rotateDegree(self, pName, degree, lastDegree):
 		cycleLen = 7.5 + (degree / 90.0) * 5
-		if cycleLen > 12.5 or cycleLen < 2.5:
+		#if cycleLen > 12.5 
+		if cycleLen < 2.5:
 			return False
 		if int(lastDegree) ==  int(degree):
 			return True
@@ -142,7 +144,7 @@ class meArm():
 		
 	def closeGripper(self):
 		"""Close the gripper, grabbing onto anything that might be there"""
-		self.rotateDegreeBasic("gripper", 90)
+		self.rotateDegreeBasic("gripper", 100)
 		time.sleep(0.3)
 
 	def getPos(self):
