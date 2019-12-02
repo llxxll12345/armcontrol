@@ -37,6 +37,7 @@ while(1):
     _, ctrs, hie = cv2.findContours(edge_filtered, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     for ctr in ctrs:
         area = cv2.contourArea(ctr)
+        print(area)
         if area > 500:
             print(area)
             print("Found")
