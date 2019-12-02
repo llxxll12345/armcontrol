@@ -34,7 +34,7 @@ while(1):
     #cv2.imshow('con', concatenated)
 
     edge_filtered = cv2.Canny(res, 70, 100)
-    #cv2.imshow('edge', edge_filtered)
+    cv2.imshow('edge', edge_filtered)
 
     _, ctrs, hie = cv2.findContours(edge_filtered, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     for ctr in ctrs:
@@ -46,7 +46,8 @@ while(1):
     #cv2.imshow('frame',frame)
     #cv2.imshow('mask',mask)
     #cv2.imshow('res',res)
-    #k = cv2.waitKey(5) & 0xFF
+    k = cv2.waitKey(0) 
+    #& 0xFF
     #if k == 27:
     #    break
 
