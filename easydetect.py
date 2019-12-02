@@ -28,11 +28,11 @@ while(1):
     frame = cv2.resize(frame, (100, 100), interpolation=cv2.INTER_CUBIC)
     res = cv2.resize(res, (100, 100), interpolation=cv2.INTER_CUBIC)
 
-    concatenated = cv2.hconcat([frame, res])
-    cv2.imshow('con', concatenated)
+    #concatenated = cv2.hconcat([frame, res])
+    #cv2.imshow('con', concatenated)
 
     edge_filtered = cv2.Canny(res, 70, 100)
-    cv2.imshow('edge', edge_filtered)
+    #cv2.imshow('edge', edge_filtered)
 
     _, ctrs, hie = cv2.findContours(edge_filtered, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     for ctr in ctrs:
@@ -45,8 +45,8 @@ while(1):
     #cv2.imshow('frame',frame)
     #cv2.imshow('mask',mask)
     #cv2.imshow('res',res)
-    k = cv2.waitKey(5) & 0xFF
-    if k == 27:
-        break
+    #k = cv2.waitKey(5) & 0xFF
+    #if k == 27:
+    #    break
 
 cv2.destroyAllWindows()
