@@ -38,8 +38,9 @@ while(1):
     for ctr in ctrs:
         area = cv2.contourArea(ctr)
         #print(area)
-        if area > 50:
+        if area > 100:
             print(area)
+        if area > 200:
             print("Found")
 
 
