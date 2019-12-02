@@ -1,4 +1,5 @@
 import cv2
+import time
 import numpy as np
 
 cap = cv2.VideoCapture(0)
@@ -9,6 +10,7 @@ while(1):
     _, frame = cap.read()
 
     # Convert BGR to HSV
+    time.sleep(0.2)
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
     # define range of blue color in HSV
