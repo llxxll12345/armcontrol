@@ -32,13 +32,13 @@ while(1):
     #cv2.imshow('con', concatenated)
 
     edge_filtered = cv2.Canny(res, 70, 100)
-    #cv2.imshow('edge', edge_filtered)
+    cv2.imshow('edge', edge_filtered)
 
     _, ctrs, hie = cv2.findContours(edge_filtered, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     for ctr in ctrs:
         area = cv2.contourArea(ctr)
-        print(area)
-        if area > 500:
+        #print(area)
+        if area > 50:
             print(area)
             print("Found")
 
@@ -46,8 +46,8 @@ while(1):
     #cv2.imshow('frame',frame)
     #cv2.imshow('mask',mask)
     #cv2.imshow('res',res)
-    #k = cv2.waitKey(5) & 0xFF
-    #if k == 27:
-    #    break
+    k = cv2.waitKey(5) & 0xFF
+    if k == 27:
+        break
 
 cv2.destroyAllWindows()
