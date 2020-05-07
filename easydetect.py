@@ -53,3 +53,5 @@ def detect():
         #    break
     return cnt >= 3
     #cv2.destroyAllWindows()
+
+# testing ssh connection
